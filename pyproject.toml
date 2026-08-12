@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "semantic-search-agents"
+version = "0.2.0"
+description = "Token-efficient semantic web retrieval for LLMs and AI agents"
+readme = "Readme.md"
+requires-python = ">=3.10"
+authors = [{ name = "Semantic Search for AI Agents contributors" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "ddgs>=9.14.4,<10",
+  "numpy>=1.26,<3",
+  "requests>=2.34.2,<3",
+  "sentence-transformers>=5.7,<6",
+  "trafilatura>=2.2,<3",
+]
+
+[project.optional-dependencies]
+faiss = ["faiss-cpu>=1.15,<2"]
+dev = [
+  "pytest>=9.1,<10",
+  "ruff>=0.16.2,<0.17",
+]
+
+[project.scripts]
+semantic-search = "search_engine.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["search_engine"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "RUF", "SIM", "UP"]

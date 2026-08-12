@@ -1,0 +1,2 @@
+# Compatibility install path. pyproject.toml is the dependency source of truth.
+-e .
