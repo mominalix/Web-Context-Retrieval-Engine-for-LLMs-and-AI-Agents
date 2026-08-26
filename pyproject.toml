@@ -24,7 +24,7 @@ dependencies = [
   "ddgs>=9.14.4,<10",
   "numpy>=1.26,<3",
   "requests>=2.34.2,<3",
-  "sentence-transformers>=5.7,<6",
+  "sentence-transformers>=5.7,<7",
   "trafilatura>=2.2,<3",
 ]
 
