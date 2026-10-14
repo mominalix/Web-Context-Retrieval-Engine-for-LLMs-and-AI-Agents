@@ -32,7 +32,7 @@ dependencies = [
 faiss = ["faiss-cpu>=1.15,<2"]
 dev = [
   "pytest>=9.1,<10",
-  "ruff>=0.16.2,<0.17",
+  "ruff>=0.16.2,<0.18",
 ]
 
 [project.scripts]
